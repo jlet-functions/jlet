@@ -97,6 +97,7 @@ public final class JLet {
    * @param block the function block
    * @param <T1>  type of the first value
    * @param <T2>  type of the second value
+   * @return first value
    * @throws NullPointerException if {@code block} arg is {@code null}
    */
   public static <T1, T2> T1 it(final T1 t1,
@@ -116,6 +117,7 @@ public final class JLet {
    * @param <T1>  type of the first value
    * @param <T2>  type of the second value
    * @param <T3>  type of the third value
+   * @return first value
    * @throws NullPointerException if {@code block} arg is {@code null}
    */
   public static <T1, T2, T3> T1 it(final T1 t1,
@@ -138,6 +140,7 @@ public final class JLet {
    * @param <T2>  type of the second value
    * @param <T3>  type of the third value
    * @param <T4>  type of the fourth value
+   * @return first value
    * @throws NullPointerException if {@code block} arg is {@code null}
    */
   public static <T1, T2, T3, T4> T1 it(final T1 t1,
@@ -163,6 +166,7 @@ public final class JLet {
    * @param <T3>  type of the third value
    * @param <T4>  type of the fourth value
    * @param <T5>  type of the fifth value
+   * @return first value
    * @throws NullPointerException if {@code block} arg is {@code null}
    */
   public static <T1, T2, T3, T4, T5> T1 it(final T1 t1,
@@ -191,6 +195,7 @@ public final class JLet {
    * @param <T4>  type of the fourth value
    * @param <T5>  type of the fifth value
    * @param <T6>  type of the sixth value
+   * @return first value
    * @throws NullPointerException if {@code block} arg is {@code null}
    */
   public static <T1, T2, T3, T4, T5, T6> T1 it(final T1 t1,
@@ -222,6 +227,7 @@ public final class JLet {
    * @param <T5>  type of the fifth value
    * @param <T6>  type of the sixth value
    * @param <T7>  type of the seventh value
+   * @return first value
    * @throws NullPointerException if {@code block} arg is {@code null}
    */
   public static <T1, T2, T3, T4, T5, T6, T7> T1 it(final T1 t1,
@@ -256,6 +262,7 @@ public final class JLet {
    * @param <T6>  type of the sixth value
    * @param <T7>  type of the seventh value
    * @param <T8>  type of the eighth value
+   * @return first value
    * @throws NullPointerException if {@code block} arg is {@code null}
    */
   public static <T1, T2, T3, T4, T5, T6, T7, T8> T1 it(final T1 t1,
