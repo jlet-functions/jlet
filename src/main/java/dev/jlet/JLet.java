@@ -90,6 +90,188 @@ public final class JLet {
   }
 
   /**
+   * Calls the specified function block with the given values and returns the first value.
+   *
+   * @param t1    the first value
+   * @param t2    the second value
+   * @param block the function block
+   * @param <T1>  type of the first value
+   * @param <T2>  type of the second value
+   * @throws NullPointerException if {@code block} arg is {@code null}
+   */
+  public static <T1, T2> T1 it(final T1 t1,
+                               final T2 t2,
+                               final ThrowingConsumer2<? super T1, ? super T2, ?> block) {
+    ThrowingConsumer2.unchecked(block).accept(t1, t2);
+    return t1;
+  }
+
+  /**
+   * Calls the specified function block with the given values and returns the first value.
+   *
+   * @param t1    the first value
+   * @param t2    the second value
+   * @param t3    the third value
+   * @param block the function block
+   * @param <T1>  type of the first value
+   * @param <T2>  type of the second value
+   * @param <T3>  type of the third value
+   * @throws NullPointerException if {@code block} arg is {@code null}
+   */
+  public static <T1, T2, T3> T1 it(final T1 t1,
+                                   final T2 t2,
+                                   final T3 t3,
+                                   final ThrowingConsumer3<? super T1, ? super T2, ? super T3, ?> block) {
+    ThrowingConsumer3.unchecked(block).accept(t1, t2, t3);
+    return t1;
+  }
+
+  /**
+   * Calls the specified function block with the given values and returns the first value.
+   *
+   * @param t1    the first value
+   * @param t2    the second value
+   * @param t3    the third value
+   * @param t4    the fourth value
+   * @param block the function block
+   * @param <T1>  type of the first value
+   * @param <T2>  type of the second value
+   * @param <T3>  type of the third value
+   * @param <T4>  type of the fourth value
+   * @throws NullPointerException if {@code block} arg is {@code null}
+   */
+  public static <T1, T2, T3, T4> T1 it(final T1 t1,
+                                       final T2 t2,
+                                       final T3 t3,
+                                       final T4 t4,
+                                       final ThrowingConsumer4<? super T1, ? super T2, ? super T3, ? super T4, ?> block) {
+    ThrowingConsumer4.unchecked(block).accept(t1, t2, t3, t4);
+    return t1;
+  }
+
+  /**
+   * Calls the specified function block with the given values and returns the first value.
+   *
+   * @param t1    the first value
+   * @param t2    the second value
+   * @param t3    the third value
+   * @param t4    the fourth value
+   * @param t5    the fifth value
+   * @param block the function block
+   * @param <T1>  type of the first value
+   * @param <T2>  type of the second value
+   * @param <T3>  type of the third value
+   * @param <T4>  type of the fourth value
+   * @param <T5>  type of the fifth value
+   * @throws NullPointerException if {@code block} arg is {@code null}
+   */
+  public static <T1, T2, T3, T4, T5> T1 it(final T1 t1,
+                                           final T2 t2,
+                                           final T3 t3,
+                                           final T4 t4,
+                                           final T5 t5,
+                                           final ThrowingConsumer5<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ?> block) {
+    ThrowingConsumer5.unchecked(block).accept(t1, t2, t3, t4, t5);
+    return t1;
+  }
+
+  /**
+   * Calls the specified function block with the given values and returns the first value.
+   *
+   * @param t1    the first value
+   * @param t2    the second value
+   * @param t3    the third value
+   * @param t4    the fourth value
+   * @param t5    the fifth value
+   * @param t6    the sixth value
+   * @param block the function block
+   * @param <T1>  type of the first value
+   * @param <T2>  type of the second value
+   * @param <T3>  type of the third value
+   * @param <T4>  type of the fourth value
+   * @param <T5>  type of the fifth value
+   * @param <T6>  type of the sixth value
+   * @throws NullPointerException if {@code block} arg is {@code null}
+   */
+  public static <T1, T2, T3, T4, T5, T6> T1 it(final T1 t1,
+                                               final T2 t2,
+                                               final T3 t3,
+                                               final T4 t4,
+                                               final T5 t5,
+                                               final T6 t6,
+                                               final ThrowingConsumer6<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ?> block) {
+    ThrowingConsumer6.unchecked(block).accept(t1, t2, t3, t4, t5, t6);
+    return t1;
+  }
+
+  /**
+   * Calls the specified function block with the given values and returns the first value.
+   *
+   * @param t1    the first value
+   * @param t2    the second value
+   * @param t3    the third value
+   * @param t4    the fourth value
+   * @param t5    the fifth value
+   * @param t6    the sixth value
+   * @param t7    the seventh value
+   * @param block the function block
+   * @param <T1>  type of the first value
+   * @param <T2>  type of the second value
+   * @param <T3>  type of the third value
+   * @param <T4>  type of the fourth value
+   * @param <T5>  type of the fifth value
+   * @param <T6>  type of the sixth value
+   * @param <T7>  type of the seventh value
+   * @throws NullPointerException if {@code block} arg is {@code null}
+   */
+  public static <T1, T2, T3, T4, T5, T6, T7> T1 it(final T1 t1,
+                                                   final T2 t2,
+                                                   final T3 t3,
+                                                   final T4 t4,
+                                                   final T5 t5,
+                                                   final T6 t6,
+                                                   final T7 t7,
+                                                   final ThrowingConsumer7<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ?> block) {
+    ThrowingConsumer7.unchecked(block).accept(t1, t2, t3, t4, t5, t6, t7);
+    return t1;
+  }
+
+  /**
+   * Calls the specified function block with the given values and returns the first value.
+   *
+   * @param t1    the first value
+   * @param t2    the second value
+   * @param t3    the third value
+   * @param t4    the fourth value
+   * @param t5    the fifth value
+   * @param t6    the sixth value
+   * @param t7    the seventh value
+   * @param t8    the eighth value
+   * @param block the function block
+   * @param <T1>  type of the first value
+   * @param <T2>  type of the second value
+   * @param <T3>  type of the third value
+   * @param <T4>  type of the fourth value
+   * @param <T5>  type of the fifth value
+   * @param <T6>  type of the sixth value
+   * @param <T7>  type of the seventh value
+   * @param <T8>  type of the eighth value
+   * @throws NullPointerException if {@code block} arg is {@code null}
+   */
+  public static <T1, T2, T3, T4, T5, T6, T7, T8> T1 it(final T1 t1,
+                                                       final T2 t2,
+                                                       final T3 t3,
+                                                       final T4 t4,
+                                                       final T5 t5,
+                                                       final T6 t6,
+                                                       final T7 t7,
+                                                       final T8 t8,
+                                                       final ThrowingConsumer8<? super T1, ? super T2, ? super T3, ? super T4, ? super T5, ? super T6, ? super T7, ? super T8, ?> block) {
+    ThrowingConsumer8.unchecked(block).accept(t1, t2, t3, t4, t5, t6, t7, t8);
+    return t1;
+  }
+
+  /**
    * Calls the specified function block with the given value and returns its result.
    *
    * @param t     the value
