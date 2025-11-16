@@ -25,8 +25,8 @@ A set of scope functions for Java.
 
 JLet is a set of scope functions for Java, similar to Kotlin's scope functions but Java-specific.
 
-When you call a scope function on an object with a lambda expression provided, it forms a temporary scope. In this
-scope, you can access the object as a lambda expression argument.
+When you call a scope function with an object and a lambda expression, it forms a temporary scope. In this scope, you
+can access the object as a lambda expression argument.
 
 ## How to use
 
@@ -70,29 +70,25 @@ dependencies {
 
 ### `let`
 
-* has arguments (from 1 to 8)
-* has result
+* has value arguments (from 1 to 8)
+* has result (lambda expression result)
 
 <!-- @formatter:off -->
 ```java
-String origin = "abcdef";
-String result = let(origin.toLowerCase(), origin.toUpperCase(), (lower, upper) ->
-  lower + upper
+String shortString = let(someObject.toString(), s ->
+  s.length() > 10 ? s.substring(0, 11) : s
 );
 ```
 <!-- @formatter:on -->
 
 ### `test`
 
-* has arguments (from 0 to 8)
-* has result (`boolean`)
+* has value arguments (from 0 to 8)
+* has result (lambda expression `boolean` result)
 
 <!-- @formatter:off -->
 ```java
-if (test(() -> {
-  // calculations
-  return true;
-})) {
+if (test(someObject.toString(), s -> s.length() > 10 && s.contains("."))) {
   System.out.println("OK");
 }
 ```
@@ -100,57 +96,65 @@ if (test(() -> {
 
 ### `run`
 
-* has no arguments
+* has no value arguments
 * has no result
 
 <!-- @formatter:off -->
 ```java
-run(() ->
-  System.out.println("OK")
-);
+run(() -> {
+  String localVariable1 = "string1";
+  String localVariable2 = "string2";
+  System.out.println(localVariable1);
+  System.out.println(localVariable2);
+});
 ```
 <!-- @formatter:on -->
 
 ### `with`
 
-* has arguments (from 1 to 8)
+* has value arguments (from 1 to 8)
 * has no result
 
 <!-- @formatter:off -->
 ```java
-String origin = "abcdef";
-with(origin.substring(0, 3), substring ->
-  System.out.println("substring: " + substring)
-);
+with(someObject.toString(), s -> {
+  String shortString = s.length() > 10 ? s.substring(0, 11) : s;
+  System.out.println(shortString);
+});
 ```
 <!-- @formatter:on -->
 
 ### `it`
 
-* has arguments (from 0 to 8)
-* has result (function result for the case of no arguments or the first value for others)
+There are two options
+
+* has no value arguments
+* has result (lambda expression result)
 
 <!-- @formatter:off -->
 ```java
-Map<Integer, String> map = it(new HashMap<>(), m -> {
+someObject.setString(it(() -> {
+  // calculations
+  return "string";
+}));
+```
+<!-- @formatter:on -->
+
+* has value arguments (from 1 to 8)
+* has result (the first value argument)
+
+<!-- @formatter:off -->
+```java
+someObject.setMap(it(new HashMap<>(), m -> {
   m.put(1, "first");
   m.put(2, "second");
-});
-
-MyObj myObj = new MyObjBuilder()
-  .setValue1(100)
-  .setValue2(it(() -> {
-    // calculations
-    return 200;
-  }))
-  .setValue3(it(map, m -> System.out.println(m)))
-  .build();
+}));
 ```
 <!-- @formatter:on -->
 
 ## Checked exceptions
 
-All of these functions ignore checked exceptions.
+All of these functions allow not catching checked exceptions.
 
 <!-- @formatter:off -->
 ```java
